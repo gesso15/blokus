@@ -1,4 +1,7 @@
-import pprint
+from pieces import piece
+from game import game
 
-board = [[0 for x in range(20)] for y in range(20)]
-pprint.pprint(board)
+state = game()
+square = piece("square", "blue")
+state.place(square, 0)
+state.place(square, 0)
