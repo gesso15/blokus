@@ -24,13 +24,15 @@ class game(object):
     if not self.in_use(piece):
       return True
     else:
-      print("Not a valid move: %s %s already in play" %(piece.color, piece.shape))
       return False
 
   def in_use(self, piece):
     """Check if piece already in play."""
     # TODO check for valid comparisons
-    return piece.shape in self.in_play[piece.color]
+    use = piece.shape in self.in_play[piece.color]
+    if use:
+      print("Not a valid move: %s %s already in play" %(piece.color, piece.shape))
+    return use
 
   def print_board(self):
     pprint.pprint(self.board)
